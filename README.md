@@ -1,2 +1,2 @@
 # Portfolio
-This is my personal portfolio showcasing all my projects.
+A personal portfolio website showcasing all my projects.
