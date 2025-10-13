@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+:root {
+  --fg-color: rgb(236, 231, 193);
+  --bg-color: rgb(26, 26, 24);
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--fg-color) transparent;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, black, var(--bg-color));
+  animation: fadeIn 1s ease-in-out;
+}
+
+#hero > h1 {
+  color: var(--fg-color);
+  /* font-family: UnifrakturMaguntia; */
+  font-size: 5rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#hero > p {
+  color: var(--fg-color);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+#hero > button {
+  border: none;
+  background-color: inherit;
+  color: rgb(236, 231, 193);
+  animation: fadeIn 1s ease-in-out;
+  position: absolute;
+  bottom: 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: font-size 0.2s;
+}
+
+#hero > button:hover {
+  font-size: 1.2rem;
+  transition: font-size 0.2s;
+}
+
+#projects {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: UnifrakturMaguntia;
+  font-size: 2rem;
+  color: var(--fg-color);
+  background: linear-gradient(to top, black 5%, var(--bg-color));
+}
+
+.project-card {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  border: solid 3px var(--fg-color);
+  border-radius: 25px;
+  width: 75vw;
+  padding: 20px;
+  color: var(--fg-color);
+  display: flex;
+  margin-top: 30px;
+  background: radial-gradient(black, var(--bg-color));
+}
+
+.project-card-img {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.project-card-img > a > img {
+  border-radius: 15px;
+  object-fit: cover;
+  height: 380px;
+  width: 380px;
+  transition: height 0.1s, width 0.1s;
+}
+
+.project-card-img > a > img:hover {
+  height: 400px;
+  width: 400px;
+  transition: height 0.2s, width 0.2s;
+}
+
+.project-card-text {
+  padding-left: 30px;
+  width: 50%;
+}
+
+.project-card-text > h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
