@@ -28,6 +28,7 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  text-align: center;
   background: linear-gradient(to bottom, black, var(--bg-color));
   animation: fadeIn 1s ease-in-out;
 }
@@ -83,6 +84,17 @@ body {
   background: linear-gradient(to top, black 5%, var(--bg-color));
 }
 
+#projects > a {
+  text-decoration: none;
+  display: flex;
+  margin-top: 50px;
+}
+
+#projects > a:hover {
+  transform: translateY(-15px);
+  transition: all 0.2s;
+}
+
 .project-card {
   font-family: Inter, Arial, Helvetica, sans-serif;
   border: solid 3px var(--fg-color);
@@ -90,45 +102,55 @@ body {
   width: 75vw;
   padding: 20px;
   color: var(--fg-color);
-  display: flex;
-  margin-top: 50px;
+
   background: radial-gradient(black, var(--bg-color));
   transition: transform 0.1s;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
 }
 
-.project-card:hover {
-  transform: translateY(-15px);
-  transition: all 0.2s;
-}
-
-.project-card-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-}
-
-.project-card-img > img {
+.project-card > img {
   object-fit: cover;
-  width: 400px;
-  height: 350px;
+  max-width: 80%;
+  aspect-ratio: calc(400 / 350);
   border-radius: 15px;
+  grid-row: span 2;
+  margin: auto;
 }
 
-a {
-  text-decoration: none;
-}
-
-.project-card-text {
-  width: 50%;
-  padding: 0px 30px;
-}
-
-.project-card-text > h3 {
+.project-card > h3 {
   text-align: center;
   margin-bottom: 10px;
 }
 
-.project-card-text > p {
+.project-card > p {
   font-size: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  #hero > p {
+    font-size: 1.25rem;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+  }
+
+  .project-card > h3 {
+    order: 0;
+    font-size: 2rem;
+  }
+
+  .project-card > img {
+    order: 1;
+    grid-column: span 2;
+  }
+
+  .project-card > p {
+    order: 2;
+  }
 }
