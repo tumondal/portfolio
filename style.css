@@ -88,6 +88,7 @@ body {
   text-decoration: none;
   display: flex;
   margin-top: 50px;
+  transition: transform 0.2s;
 }
 
 #projects > a:hover {
